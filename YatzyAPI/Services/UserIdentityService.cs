@@ -55,6 +55,7 @@ public class UserIdentityService : IUserIdentityService
     public async Task<AppResponse<DefaultResponseItem>> LoginAsync(LoginModel model)
     {
         var user = await _userManager.FindByEmailAsync(model.EmailAddress);
+
         if (user == null)
         {
             return new AppResponse<DefaultResponseItem>
