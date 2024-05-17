@@ -1,5 +1,10 @@
 var builder = WebApplication.CreateBuilder(args);
 
+
+using var db = new YatzyContext();
+
+// Note: This sample requires the database to be created before running.
+Console.WriteLine($"Database path: {db.DbPath}.");
 // Add services to the container.
 
 builder.Services.AddControllers();
